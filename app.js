@@ -67,7 +67,7 @@ function renderHome() {
     <div class="home-hero">
       <div class="home-eyebrow">Universität Bern · Masterarbeit · 2026</div>
       <h1 class="home-title">Digitaler Anhang</h1>
-      <p class="home-sub">Von Alexander Tschirch geleitete Berner Dissertationen als Quellen zur Geschichte der Pharmazie</p>
+      <p class="home-sub">Unter Alexander Tschirch entstandene Berner Dissertationen als Quellen zur Geschichte der Pharmazie</p>
       <p class="home-author">Hanna Schmid</p>
     </div>
 
