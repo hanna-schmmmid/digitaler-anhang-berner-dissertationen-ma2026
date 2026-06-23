@@ -1,6 +1,6 @@
 # Digitaler Anhang
 
-**Berner Dissertationen als Quellen zur Geschichte der Pharmazie**
+**Von Alexander Tschirch geleitete Berner Dissertationen als Quellen zur Geschichte der Pharmazie**
 Masterarbeit von Hanna Schmid · Universität Bern · 2026
 
 ---
