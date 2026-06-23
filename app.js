@@ -72,8 +72,7 @@ function renderHome() {
     </div>
 
     <div class="home-intro">
-      <p>Dieser digitale Anhang ergänzt die gleichnamige Masterarbeit. Er macht das vollständige Quellenkorpus, die quantitative Auswertung, die qualitativen Einzelanalysen und den Analysecode interaktiv zugänglich. Alle Inhalte sind offline nutzbar; es wird keine Internetverbindung benötigt.</p>
-    </div>
+      <p>Dieser digitale Anhang ergänzt die gleichnamige Masterarbeit. Er macht das vollständige Quellenkorpus, die quantitative Auswertung, die qualitativen Einzelanalysen und den Analysecode interaktiv zugänglich.</div>
 
     <h2 class="home-section-title">Bereiche</h2>
     <div class="home-cards">
