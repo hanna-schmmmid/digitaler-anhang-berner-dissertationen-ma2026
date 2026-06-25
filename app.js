@@ -24,8 +24,7 @@ navItems.forEach(item => {
 
 function renderPanel(name) {
   ({ home: renderHome, abbildungen: renderAbbildungen,
-     hermeneutik: renderHermeneutik, rskripte: renderRSkripte,
-     korpus: renderKorpus, personen: renderPersonen })[name]();
+     hermeneutik: renderHermeneutik, rskripte: renderRSkripte})[name]();
 }
 
 // Mobile sidebar
