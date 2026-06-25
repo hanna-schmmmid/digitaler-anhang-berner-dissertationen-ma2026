@@ -557,34 +557,6 @@
     background: var(--bg); font-size: 0.78rem; white-space: nowrap;
   }
 
-  /* === PERSONEN === */
-  .personen-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0.9rem; }
-  .person-card {
-    background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
-    padding: 0.9rem 1.1rem; display: flex; align-items: center; gap: 0.9rem; box-shadow: var(--shadow);
-  }
-  .person-rank {
-    font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 1.1rem; font-weight: 700;
-    color: var(--text-muted); min-width: 28px; text-align: center;
-  }
-  .person-info { flex: 1; min-width: 0; }
-  .person-name { font-weight: 600; font-size: 0.92rem; line-height: 1.3; }
-  .person-trad { font-size: 0.76rem; color: var(--text-muted); margin-top: 0.15rem; }
-  .person-count {
-    font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 1.1rem;
-    color: var(--accent); min-width: 30px; text-align: right;
-  }
-  .trad-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 0.4rem; vertical-align: middle; }
-  .trad-filter { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
-  .trad-chip {
-    padding: 0.35rem 0.8rem; border: 1px solid var(--border-strong); background: white;
-    border-radius: 999px; font-size: 0.8rem; cursor: pointer; display: inline-flex;
-    align-items: center; gap: 0.3rem; transition: all 0.15s;
-  }
-  .trad-chip:hover { border-color: var(--accent); }
-  .trad-chip.active { background: var(--accent); color: white; border-color: var(--accent); }
-  .trad-chip.active .trad-dot { box-shadow: 0 0 0 2px white; }
-
   /* === Responsive === */
   @media (max-width: 980px) {
     .herm-cols { grid-template-columns: 1fr; }
