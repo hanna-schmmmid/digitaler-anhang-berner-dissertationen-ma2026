@@ -59,9 +59,7 @@ function renderHome() {
       desc: 'Qualitative Einzellektüren ausgewählter Dissertationen, jeweils mit Titelseite der Originalarbeit und vollständigem Analysetext.' },
     { panel: 'rskripte', ico: '⟨⟩', title: 'R-Skripte & Daten', meta: '2 Skripte · 5 Datensätze',
       desc: 'Der vollständige Analysecode beider Auswertungen sowie die zugrunde liegenden CSV-Datensätze zum Download.' },
-    { panel: 'personen', ico: '✦', title: 'Personenranking', meta: '53 Autoritäten',
-      desc: 'Die in den historischen Einleitungen genannten historischen Autoritäten, gefärbt nach pharmaziehistorischer Traditionslinie.' }
-  ];
+    ];
   p.innerHTML = `
     <div class="home-hero">
       <div class="home-eyebrow">Universität Bern · Masterarbeit · 2026</div>
@@ -635,51 +633,6 @@ function renderKTable() {
 
   document.querySelectorAll('#kTable th').forEach(th => { th.classList.remove('sorted','asc');
     if (th.dataset.sort === kSort) { th.classList.add('sorted'); if (kAsc) th.classList.add('asc'); } });
-}
-
-// ============================================================
-// 6) PERSONENRANKING
-// ============================================================
-const tradColors = {
-  'Griechisch-römische Antike': '#8FB0CE', 'Byzantinische Medizin': '#9BC2C2',
-  'Arabisch-islamische Medizin': '#E0B978', 'Frühneuzeitliche Botanik': '#A9C99B',
-  'Frühneuzeitliche Pharmakochemie': '#C9A9D4', 'Chemie & Pharmazie 19. Jh.': '#D98B95',
-  'Geographie & Handelswege': '#B0A89C', 'Mythisch / Frühgeschichte': '#E5D5A3'
-};
-let tradActive = 'all';
-function renderPersonen() {
-  const p = document.getElementById('panel-personen');
-  const trads = [...new Set(PERSONEN.map(x => x.tradition))];
-  let chips = `<div class="trad-chip active" data-trad="all">Alle Traditionen</div>`;
-  trads.forEach(t => chips += `<div class="trad-chip" data-trad="${esc(t)}"><span class="trad-dot" style="background:${tradColors[t]||'#ccc'}"></span>${esc(t)}</div>`);
-  p.innerHTML = `
-    <div class="panel-intro">
-      <h2>Personenranking</h2>
-      <p>Alle historischen Autoritäten mit mindestens drei Nennungen in den Einleitungen (53 Personen), gefärbt nach pharmaziehistorischer Traditionslinie. Filtern Sie nach Tradition.</p>
-    </div>
-    <div class="trad-filter" id="tradFilter">${chips}</div>
-    <div class="personen-grid" id="personenGrid"></div>`;
-  document.getElementById('tradFilter').addEventListener('click', e => {
-    const chip = e.target.closest('.trad-chip'); if (!chip) return;
-    document.querySelectorAll('.trad-chip').forEach(c => c.classList.remove('active'));
-    chip.classList.add('active'); tradActive = chip.dataset.trad; renderPersonenGrid();
-  });
-  renderPersonenGrid();
-}
-function renderPersonenGrid() {
-  const grid = document.getElementById('personenGrid');
-  const rows = PERSONEN.filter(p => tradActive === 'all' || p.tradition === tradActive);
-  grid.innerHTML = rows.map((p, i) => {
-    const rank = PERSONEN.indexOf(p) + 1;
-    return `<div class="person-card">
-      <div class="person-rank">${rank}</div>
-      <div class="person-info">
-        <div class="person-name">${esc(p.name)}</div>
-        <div class="person-trad"><span class="trad-dot" style="background:${tradColors[p.tradition]||'#ccc'}"></span>${esc(p.tradition)}</div>
-      </div>
-      <div class="person-count">${p.nennungen}</div>
-    </div>`;
-  }).join('');
 }
 
 // ============================================================
